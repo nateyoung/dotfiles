@@ -4,7 +4,7 @@ alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 
 # determine if we're home or elsewhere (determine if we need to use duckdns)
-if [[ `/sbin/iwconfig 2>&1 | grep iowireless` ]]; then
+if [[ `/sbin/iwconfig 2>&1 | grep iowireless` == 1 ]]; then
   pi_hostname='192.168.1.145'
 else
   pi_hostname='nate.duckdns.org'
