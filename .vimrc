@@ -48,10 +48,8 @@ set guioptions-=r           " no scrollbar in gVim
 set guioptions-=L           " no scrollbar in gVim
 set title titlestring=gvim  " don't need to see "nerdtree" in title
 
-" ctags optimization
-"set autochdir
-"set tags=tag
-"set tags=/prj/docsis3.1/sandboxes/youngn/docsis31-R-2-37/docsis31/tags
+" paste in insert mode
+imap <C-v> <C-r><C-o>+
 
 " enable persistent undo
 let vimDir = '$HOME/.vim'
@@ -143,28 +141,12 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Open a Quickfix window for the last search.
 nnoremap <silent> ,s :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
-" tmux and vim interactions
-if exists($TMUX)
-  let g:tmux_navigator_no_mappings = 1
-
-  nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-  nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-  nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-  nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-  nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
-else
-  nnoremap <silent> <C-h> <C-w>h
-  nnoremap <silent> <C-j> <C-w>j
-  nnoremap <silent> <C-k> <C-w>k
-  nnoremap <silent> <C-l> <C-w>l
-endif
-
 " edit and source vimrc
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Tabularize mappings - use GTabularize to ignore comment lines in visual-block mode
-if exists(':Tabularize')
+function! s:TabAliases()
   " align commas
   nnoremap <leader>a, :Tabularize /,<cr>
   vnoremap <leader>a, :GTabularize /[^\/\/],<cr>gv
@@ -202,7 +184,8 @@ if exists(':Tabularize')
   nnoremap <leader>a) :Tabularize /)/l1c0<cr>
   vnoremap <leader>a) :GTabularize /)/l1c0<cr>gv
   "vnoremap <leader>a) :GTabularize /[^^\s*\/\/])/l1c0<cr>gv " doesn't work for some reason
-endif
+endfunction
+autocmd VimEnter * if exists(":Tabularize") | call s:TabAliases() | endif
 
 " make ; and : do the same thing (no need for extra shift all the time...)
 nnoremap ; :
@@ -225,8 +208,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 filetype plugin on
 
-" matchit stuff (to match verilog pairs)
-source ~/.vim/plugin/matchit.vim
 if exists('loaded_matchit')
   let b:match_ignorecase=0
   let b:match_words=
@@ -253,23 +234,6 @@ endif
 
 " Setup log file highlighting - this needs fixing...
 autocmd BufRead,BufReadPost *.log,*.log.gz set filetype=log_file
-"autocmd FileType log_file
- "\   if exists ("b:current_syntax")
- "\ |   finish
- "\ | endif
- "\ | syn keyword logErrorKeyword UVM_ERROR UVM_FATAL ERROR Error error
- "\ | syn match   logErrorKeyword "\*E\>"
- "\ | syn match   logErrorKeyword "\*F\>"
- "\ | syn keyword logWarnKeyword UVM_WARNING
- "\ | syn match   logWarnKeyword "\ASSERT/WARNING\>"
- "\ | syn match   logWarnKeyword "\*W\>"
- "\ | syn keyword logInfoKeyword UVM_INFO ASRTST
- "\ | syn match   logInfoKeyword "\,ASRTST\>"
- "\ | syn match   logInfoKeyword "\*N\>"
- "\ | highlight   logWarnKeyword  cterm=NONE ctermfg=NONE ctermbg=Black gui=Bold guifg=Yellow guibg=NONE
- "\ | highlight   logErrorKeyword cterm=NONE ctermfg=NONE ctermbg=Black gui=Bold guifg=Red guibg=NONE
- "\ | highlight   logInfoKeyword  cterm=NONE ctermfg=NONE ctermbg=Black gui=Bold guifg=Cyan guibg=NONE
- "\ | let b:current_syntax = "log_file"
 
 " command to run a shell command and put output in a new buffer
 " To use, :Shell <command>
@@ -320,5 +284,3 @@ let g:tagbar_type_systemverilog = {
 " turn on indent guides by default
 "let g:indent_guides_enable_on_vim_startup = 1
 
-" paste in insert mode
-imap <C-v> <C-r><C-o>+
