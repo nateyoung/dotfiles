@@ -3,7 +3,14 @@ alias uu='cd ../..'
 alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 
-alias sshp='ssh pi@192.168.1.145'
+# determine if we're home or elsewhere (determine if we need to use duckdns)
+if [[ `/sbin/iwconfig 2>&1 | grep iowireless` ]]; then
+  pi_hostname='192.168.1.145'
+else
+  pi_hostname='nate.duckdns.org'
+fi
+
+alias sshp="ssh pi@$pi_hostname"
 
 # ls aliases
 alias ls='ls --color'
