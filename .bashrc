@@ -42,10 +42,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # some more ls aliases
-alias ll='ls -alF'
 
-if [ -f ~/dotfiles/.bash_aliases ]; then
-    . ~/dotfiles/.bash_aliases
+if [ -f ~/.dotfiles/.bash_aliases ]; then
+    . ~/.dotfiles/.bash_aliases
 fi
 
 # set up android sdk

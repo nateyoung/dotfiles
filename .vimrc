@@ -51,6 +51,12 @@ set title titlestring=gvim  " don't need to see "nerdtree" in title
 " paste in insert mode
 imap <C-v> <C-r><C-o>+
 
+" sane window navigation
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+
 " enable persistent undo
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
