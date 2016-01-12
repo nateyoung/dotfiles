@@ -15,3 +15,6 @@ alias sshp="ssh pi@$pi_hostname"
 # ls aliases
 alias ls='ls --color'
 alias ll='ls -las --color'
+
+# function to open up a port for another client on LAN
+punch() {sudo iptables -I INPUT 1 -s 192.168.1.$1 -j ACCEPT}
