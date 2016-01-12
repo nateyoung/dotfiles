@@ -43,7 +43,7 @@ set gdefault                " default search/replace to whole file without 'g'
 set nobackup                " we don't need no stinkin' backup
 set noswapfile              " we don't need no stinkin' swap
 set guioptions-=T           " no toolbar in gVim
-set guioptions-=m           " no menubar in gVim
+"set guioptions-=m           " no menubar in gVim
 set guioptions-=r           " no scrollbar in gVim
 set guioptions-=L           " no scrollbar in gVim
 set title titlestring=gvim  " don't need to see "nerdtree" in title
@@ -208,6 +208,7 @@ set laststatus=2
 " airline stuff
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'bubblegum'
+"let g:airline_powerline_fonts=1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
