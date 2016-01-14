@@ -43,8 +43,8 @@ alias egrep='egrep --color=auto'
 
 # some more ls aliases
 
-if [ -f ~/dotfiles/.bash_aliases ]; then
-    . ~/dotfiles/.bash_aliases
+if [ -f ~/git/dotfiles/.bash_aliases ]; then
+    . ~/git/dotfiles/.bash_aliases
 fi
 
 # set up android sdk
