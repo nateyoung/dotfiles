@@ -47,6 +47,7 @@ set guioptions-=T           " no toolbar in gVim
 set guioptions-=r           " no scrollbar in gVim
 set guioptions-=L           " no scrollbar in gVim
 set title titlestring=gvim  " don't need to see "nerdtree" in title
+set smartindent             " indent smartly
 
 " paste in insert mode
 imap <C-v> <C-r><C-o>+
