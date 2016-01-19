@@ -105,8 +105,8 @@ nnoremap <leader>rn :set invrnu<cr>
 " reload file
 nnoremap <leader>r :e<cr>
 
-" toggle NERDTree
-nnoremap <leader>k :NERDTreeToggle<cr>
+" toggle NERDTree and Buffergator
+nnoremap <leader>k :NERDTreeToggle<cr>:BuffergatorToggle<cr>
 
 " go to single window mode ([f]ullscreen)
 nnoremap <leader>f <C-W>o
@@ -308,3 +308,9 @@ let g:tagbar_type_systemverilog = {
 " turn on indent guides by default
 "let g:indent_guides_enable_on_vim_startup = 1
 
+" buffergator
+let g:buffergator_autoupdate = 1
+let g:buffergator_viewport_split_policy = "R"
+let g:buffergator_suppress_keymaps = 1
+let g:buffergator_autodismiss_on_select = 0
+let g:buffergator_sort_regime = "basename"
