@@ -314,3 +314,4 @@ let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_sort_regime = "basename"
+let g:buffergator_autoexpand_on_split = 0
