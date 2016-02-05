@@ -51,6 +51,8 @@ set autoindent              " automagically indent
 
 " paste in insert mode
 imap <C-v> <C-r><C-o>+
+" copy in visual mode (after mouse select)
+vmap <C-c> "+y
 
 " sane window navigation
 nnoremap <silent> <C-h> <C-w>h
