@@ -35,7 +35,7 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-PS1="\e[1;32m[\u@\h \w] # \e[m"
+PS1="\[\e[1;32m\][\u@\h \w] # \[\e[0m\]"
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
