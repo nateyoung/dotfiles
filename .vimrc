@@ -141,6 +141,7 @@ nnoremap <leader>j :call GotoJump()<cr>
 " navigate buffers easier
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>b :bprev<CR>
+nnoremap <leader>3 :b#<CR>
 
 " yankring
 nnoremap <leader>y :YRShow<CR>
