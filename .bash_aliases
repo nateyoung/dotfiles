@@ -17,7 +17,7 @@ alias ls='ls --color'
 alias ll='ls -las --color'
 
 # function to open up a port for another client on LAN
-punch() {sudo iptables -I INPUT 1 -s 192.168.1.$1 -j ACCEPT}
+#punch() {sudo iptables -I INPUT 1 -s 192.168.1.$1 -j ACCEPT}
 
 # adb aliases
 alias adev='adb devices'
