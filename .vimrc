@@ -107,6 +107,9 @@ nnoremap <leader>rn :set invrnu<cr>
 " reload file
 nnoremap <leader>r :e<cr>
 
+" block comment
+map <leader>c :TCommentBlock<cr>
+
 " toggle NERDTree and Buffergator
 nnoremap <leader>k :NERDTreeToggle<cr>:BuffergatorToggle<cr>
 
