@@ -1,6 +1,13 @@
 " let pathogen install plugins
 execute pathogen#infect()
 
+au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"    
+au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+
+
 set t_Co=256                " enable 256 colors
 "colorscheme blackdust       " color scheme
 "colorscheme busybee         " color scheme
@@ -231,7 +238,7 @@ set laststatus=2
 " airline stuff
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'bubblegum'
-"let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
