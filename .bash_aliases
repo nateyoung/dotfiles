@@ -22,3 +22,10 @@ alias ll='ls -las --color'
 # adb aliases
 alias adev='adb devices'
 alias acon='adb connect 192.168.1.111:5555'
+
+# tmuxinator
+alias tdev='tmuxinator start dev'
+
+alias tmuxl='tmux list-sessions'
+alias tmuxa='tmux attach'
+alias tmuxk='tmux kill-session -t'
