@@ -51,3 +51,5 @@ fi
 if [ -d /home/nate/android/android-studio/bin ]; then
   export PATH=/home/nate/android/android-studio/bin:$PATH
 fi
+
+export EDITOR='vim'
