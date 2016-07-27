@@ -5,7 +5,7 @@ au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-te
 au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
+autocmd VimLeave * silent !echo -ne "\033]112\007"
 
 
 set t_Co=256                " enable 256 colors
@@ -132,6 +132,9 @@ nnoremap <leader>x :bp\|bd #<CR>
 " invert listchars (whitespace display)
 nnoremap <leader>l :set invlist<cr>
 
+" insert GUID at current cursor position
+nnoremap <leader>g :r !uuidgen<cr>kJ
+
 " jumps - from http://vim.wikia.com/wiki/Jumping_to_previously_visited_locations
 function! GotoJump()
   jumps
@@ -147,6 +150,9 @@ function! GotoJump()
   endif
 endfunction
 nnoremap <leader>j :call GotoJump()<cr>
+
+" ack edk2 sources
+command! -nargs=1 Eack Ack <q-args> ~/git/UEFI/edk2
 
 " navigate buffers easier
 nnoremap <leader>n :bnext<CR>
@@ -328,3 +334,4 @@ let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_sort_regime = "basename"
 let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_split_size = 70

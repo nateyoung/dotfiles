@@ -25,7 +25,17 @@ alias acon='adb connect 192.168.1.111:5555'
 
 # tmuxinator
 alias tdev='tmuxinator start dev'
-
+alias twatch='tmuxinator start watchdog'
+alias tmisc='tmuxinator start misc'
+alias tedk='tmuxinator start edk'
 alias tmuxl='tmux list-sessions'
 alias tmuxa='tmux attach'
 alias tmuxk='tmux kill-session -t'
+
+alias un='sudo umount /media/nyoung/NATE/'
+
+# function to ack edk2 sources
+edk2ack() {
+  ack $1 ~/git/UEFI/edk2
+}
+alias eack=edk2ack

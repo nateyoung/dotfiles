@@ -52,4 +52,6 @@ if [ -d /home/nate/android/android-studio/bin ]; then
   export PATH=/home/nate/android/android-studio/bin:$PATH
 fi
 
+export IGNOREEOF=5 # shell only exits after the 5th consecutive Ctrl-d
+
 export EDITOR='vim'
