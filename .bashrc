@@ -55,27 +55,3 @@ fi
 export IGNOREEOF=5 # shell only exits after the 5th consecutive Ctrl-d
 
 export EDITOR='vim'
-
-alias vimplugs='mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
-mkdir vimplugs_temp && \
-cd vimplugs_temp && \
-git clone https://github.com/vim-airline/vim-airline.git && \
-git clone https://github.com/vim-airline/vim-airline-themes.git && \
-git clone https://github.com/scrooloose/nerdtree.git && \
-git clone https://github.com/jeetsukumaran/vim-buffergator.git && \
-git clone https://github.com/mileszs/ack.vim.git && \
-git clone https://github.com/kien/ctrlp.vim.git && \
-git clone https://github.com/fugalh/desert.vim.git && \
-git clone git://github.com/majutsushi/tagbar && \
-git clone https://github.com/godlygeek/tabular.git && \
-git clone https://github.com/tomtom/tcomment_vim.git && \
-git clone https://github.com/ntpeters/vim-better-whitespace.git && \
-git clone https://github.com/tpope/vim-fugitive.git && \
-git clone https://github.com/airblade/vim-gitgutter.git && \
-git clone https://github.com/terryma/vim-multiple-cursors.git && \
-git clone https://github.com/christoomey/vim-tmux-navigator.git && \
-git clone https://github.com/vim-scripts/YankRing.vim.git && \
-(tar c .) | (cd ~/.vim/bundle && tar xf -) && \
-cd .. && \
-rm -rf vimplugs_temp'
