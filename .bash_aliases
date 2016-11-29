@@ -34,6 +34,11 @@ alias tmuxk='tmux kill-session -t'
 
 alias un='sudo umount /media/nyoung/NATE/'
 
+# mail a file
+mailme() {
+  swaks --from nyoung@trentonsystems.com --to nyoung@trentonsystems.com --body "file $1 is attached" --attach $1 --header "Subject: file from `hostname` - $1"
+}
+
 # function to ack edk2 sources
 edk2ack() {
   ack $1 ~/git/UEFI/edk2
