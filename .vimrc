@@ -1,10 +1,12 @@
 " let pathogen install plugins
 execute pathogen#infect()
 
-au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"    
-au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+
+
+"au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"    
+"au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 autocmd VimLeave * silent !echo -ne "\033]112\007"
 
 
@@ -53,8 +55,10 @@ set guioptions-=T           " no toolbar in gVim
 "set guioptions-=m           " no menubar in gVim
 set guioptions-=r           " no scrollbar in gVim
 set guioptions-=L           " no scrollbar in gVim
-set title titlestring=gvim  " don't need to see "nerdtree" in title
+set title titlestring=vim   " don't need to see "nerdtree" in title
 set autoindent              " automagically indent
+let &titleold='term'        " clear title to get rid of 'thanks for flying VIM' nonsense
+"set title
 
 " paste in insert mode
 imap <C-v> <C-r><C-o>+
