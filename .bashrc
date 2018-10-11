@@ -41,6 +41,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# enable vi mode with <Escape>
+set -o vi
+
 # some more ls aliases
 
 if [ -f ~/git/dotfiles/.bash_aliases ]; then

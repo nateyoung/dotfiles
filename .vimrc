@@ -12,7 +12,8 @@ set t_Co=256                " enable 256 colors
 "colorscheme blackdust       " color scheme
 "colorscheme busybee         " color scheme
 "colorscheme camo            " color scheme
-colorscheme desert          " color scheme
+"colorscheme desert          " color scheme
+colorscheme ron             " color scheme
 set shell=/bin/sh           " set shell - needed for tmux<->vim switching
 scriptencoding utf-8        " process w/ utf8 support
 set encoding=utf-8          " enable utf8
@@ -333,5 +334,6 @@ let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_sort_regime = "basename"
+let g:buffergator_display_regime = "parentdir"
 let g:buffergator_autoexpand_on_split = 0
 let g:buffergator_split_size = 70
