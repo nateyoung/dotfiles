@@ -4,7 +4,7 @@ dotfile awesomeness
 ## getting started
 ```
 # install pre-reqs
-sudo apt-get install vim git curl
+sudo apt-get -y install vim git curl
 
 # clone dotfiles repo
 cd
@@ -22,4 +22,5 @@ ln -s git/dotfiles/.vimrc .vimrc
 source .bashrc
 vimplugs
 cd
+
 ```
