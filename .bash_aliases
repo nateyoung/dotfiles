@@ -64,4 +64,5 @@ git clone https://github.com/airblade/vim-gitgutter.git && \
 git clone https://github.com/terryma/vim-multiple-cursors.git && \
 git clone https://github.com/christoomey/vim-tmux-navigator.git && \
 git clone https://github.com/vim-scripts/YankRing.vim.git && \
+git clone https://github.com/flazz/vim-colorschemes.git && \
 (tar c .) | (cd ~/.vim/bundle && tar xf -)'
